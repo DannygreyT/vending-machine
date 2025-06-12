@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vending Machine - Cart</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Your Cart</h1>
+
+    {% if cart_products %}
+        {% for product in cart_products %}
+            <div>
+                <h2>{{ product['name'] }}</h2>
+                <p>Price: £{{ product['price'] }}</p>
+            </div>
+            <hr>
+        {% endfor %}
+
+        <h3>Total: £{{ total }}</h3>
+        <a href="/clear_cart"><button>Clear Cart</button></a>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+
+    <p><a href="/">Back to Products</a></p>
+</body>
+</html>
 
