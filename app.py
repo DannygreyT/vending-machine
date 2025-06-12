@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -15,4 +16,13 @@ def admin():
     return render_template('admin.html')
 
 if __name__ == "__main__":
+    app.run(debug=True)uct.html')
+
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+
+if __name__ == "__main__":
     app.run(debug=True)
+
+>>>>>>> 03ed9fb (Added full initial Vending Machine project (manual))

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Flask==2.2.5
+=======
+Flask==2.2.5
+>>>>>>> 03ed9fb (Added full initial Vending Machine project (manual))
