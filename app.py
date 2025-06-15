@@ -65,3 +65,32 @@ def admin():
 if __name__ == "__main__":
     app.run(debug=True)
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Checkout</h1>
+
+    {% if cart_products %}
+        <ul>
+        {% for product in cart_products %}
+            <li>{{ product['name'] }} – £{{ product['price'] }}</li>
+        {% endfor %}
+        </ul>
+        <h3>Total: £{{ total }}</h3>
+
+        <p><strong>Payment system coming soon...</strong></p>
+        <button disabled>Pay with Stripe (coming soon)</button>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+
+    <p><a href="/">Back to Products</a></p>
+    <p><a href="/cart">Back to Cart</a></p>
+</body>
+</html>
+
